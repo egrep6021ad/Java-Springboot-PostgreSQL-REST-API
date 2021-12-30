@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.left-item{
+ 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-right: 20px;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100vh;
+  height: 5%;
+  background-color: black;
+  text-align: center;
+  background-color: #282c34;
+
+}
+.backGround{
+  background-image: url(./SamSquad.jpg);
+  margin-top: auto;
+  height: 400px;
+}
+.slider-container {
+  width: 100%;
+  height: 100%;
+  position:fixed; /* add this code for position fixed */
+  top:0px; /* set top and left 0 */
+  left:0px;
+}
+.slider-item-div {
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.carousel-style {
+  height: 100%
+   !important;
+}
+.carousel {
+  width: 160%px;
+  height: 100%;
+  margin-bottom:50px;
+}
+.cointainer{
+  width: 100%;
+  height: 100%;
+  position:fixed; /* add this code for position fixed */
+  padding-bottom:120px; /* set top and left 0 */
+  left:0px;
+
+}
