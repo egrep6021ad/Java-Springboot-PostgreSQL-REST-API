@@ -17,8 +17,6 @@ public class NewClientController {
     public NewClientController(NewClientService newClientService, MailService newEmailService) {
         this.newClientService = newClientService;
         this.newEmailService = newEmailService;
-
-
     }
     //GET ALL patients (works well)
     @GetMapping
@@ -32,35 +30,16 @@ public class NewClientController {
         return newClientService.findClientByPhone(phone);
 
     }
-    // CREATE (post) New Client (works well)
+    @GetMapping(path = "{email}")
+    public ResponseEntity<Client> findClientByEmail(@PathVariable("email") String email) {
+        return newClientService.findClientByEmail(email);
+    }
+    // CREATE (post) New Client (works well by sending email to client with their quote)
     @PostMapping
     public void registerNewClient(@RequestBody Client client){
             newClientService.addNewClient(client);
             newEmailService.sendMessage(client);
         }
-    }
 
+}
 
-   /* @GetMapping(path ="{id}")
-    public Client findClientById(@PathVariable("id") Long id){
-
-        return newClientService.findClientById(id);
-    }
-    /* @GetMapping(path = "{phone}")
-    public  ResponseEntity<Client> setQuote(@PathVariable("phone") String phone ){
-
-        return newClientService.instantQuote();
-    }*/
-    // DELETE client (works well)
-   /* @DeleteMapping(path = "{clientId}")
-    public void deleteClient(@PathVariable("clientId") Long clientId) {
-        newClientService.deleteById(clientId);
-    }*/
-    // TO DO: just not working, but not applicable in this applications purpose..
-    // UPDATE
-   /* @PutMapping(path = "{clientId}")
-    public void updateClient(
-            @PathVariable("clientId") Long clientId,
-            @RequestParam(required = false)String notes){
-        newClientService.updateClient(clientId, notes);
-    }*/
